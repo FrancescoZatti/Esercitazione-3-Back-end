@@ -1,0 +1,10 @@
+.cercaPost {
+  width: 20rem !important;
+}
+
+.cercaPost:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: #DEE2E6 1px solid !important;
+  background-color: aliceblue !important;
+}

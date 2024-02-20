@@ -1,0 +1,1 @@
+export const url = 'https://news.harvard.edu/gazette/wp-json/wp/v2/';
