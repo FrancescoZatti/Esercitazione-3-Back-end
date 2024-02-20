@@ -3,11 +3,14 @@ import { url } from "../data/data.js";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router-dom";
+
 
 export default function MyPost() {
   const [posts, setPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(url + "posts?_embed")
@@ -67,7 +70,9 @@ export default function MyPost() {
                         {post.yoast_head_json.author} | {post.date.slice(0, -9)} 
                     </Card.Text>
                 </div>
-                <Button variant="primary position-absolute bottom-0 my-2">
+                <Button
+                onClick={() => navigate(`/posts/${post.id}`)}
+                variant="primary position-absolute bottom-0 my-2">
                   Leggi di più
                 </Button>
               </Card.Body>
