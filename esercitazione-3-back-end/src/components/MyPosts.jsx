@@ -35,9 +35,10 @@ export default function MyPost() {
 
   return (
     <>
-      <div>
+      <div
+      style={{ minHeight: "60vh" }}>
       <Form.Group className="container mb-4" onSubmit={handleSearch}>
-        <Form.Text>Search articles:</Form.Text>
+        <Form.Text className="text-light">Search articles:</Form.Text>
         <Form.Control type="text"
               placeholder="Search..."
               className="cercaPost mr-sm-2"
@@ -50,16 +51,17 @@ export default function MyPost() {
           filteredPosts.map((post) => (
             <Card
               key={post.id}
-              className="col-lg-3 col-md-5 col-sm-12 mx-lg-1 mx-md-2 mx-sm-1 my-1"
+              className="post col-lg-3 col-md-5 col-sm-12 mx-lg-1 mx-md-2 mx-sm-1 my-1"
               style={{ minHeight: "22rem", width: "25rem" }}
+              onClick={() => navigate(`/posts/${post.id}`)}
             >
               <Card.Img
               variant="top"
-              style={{ height: "15rem" }}
+              style={{ height: "12rem", objectFit: "cover" }}
               src={post._embedded['wp:featuredmedia']['0'].source_url}
               />
               <Card.Body>
-                <div style={{ height: "20rem" }}>
+                <div style={{ height: "15rem" }}>
                     <Card.Title>{post.title.rendered}</Card.Title>
                     <Card.Text>
                     <span
@@ -79,7 +81,7 @@ export default function MyPost() {
             </Card>
           ))
         ) : (
-          <p>No matching posts found.</p>
+          <p className="text-light">No matching posts found.</p>
         )}
         </div>
       </div>

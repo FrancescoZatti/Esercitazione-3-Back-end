@@ -2,6 +2,7 @@ import React from 'react'
 import MyNavbar from '../components/MyNavbar'
 import MyPosts from '../components/MyPosts.jsx'
 import Container from 'react-bootstrap/esm/Container.js'
+import MyFooter from '../components/MyFooter.jsx'
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
         <Container fluid className="mt-5">
           <MyPosts />
         </Container>
+        <MyFooter />
     </>
   )
 }

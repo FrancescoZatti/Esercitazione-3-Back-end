@@ -16,22 +16,19 @@ export default function MyDetailPost() {
   console.log(post);
 
   return (
-    <Container fluid>
+    <>
       {post.title && (
-        <Card>
+        <Card
+        className="container-fluid cardPost mt-3 mb-4"
+        >
           <Card.Body>
-            <Card.Img variant="top" src={post._embedded["wp:featuredmedia"][0].source_url} />
-            <Card.Title>{post.title.rendered}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Card.Link href="#">Card Link</Card.Link>
-            <Card.Link href="#">Another Link</Card.Link>
+            {/* <Card.Img id="postCover" variant="top" src={post._embedded["wp:featuredmedia"][0].source_url} />
+            <Card.Title className="my-2 fs-1">{post.title.rendered}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted" dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} /> */}
+            <Card.Text dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
           </Card.Body>
         </Card>
       )}
-    </Container>
+    </>
   );
 }

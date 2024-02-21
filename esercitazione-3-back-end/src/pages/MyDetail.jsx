@@ -2,6 +2,7 @@ import React from 'react'
 import MyNavbar from '../components/MyNavbar'
 import MyDetailPost from '../components/MyDetailPost'
 import { Container } from 'react-bootstrap'
+import MyFooter from '../components/MyFooter'
 
 
 export default function MyDetail() {
@@ -11,6 +12,7 @@ export default function MyDetail() {
     <Container>
         <MyDetailPost />
     </Container>
+    <MyFooter />
     </>
   )
 }
